@@ -22,12 +22,12 @@ class ReminderCreateView(CreateView):
 
 class ReminderUpdateView(UpdateView):
     model = Reminder
-    template_name = "reminder_form.html"
-    fields = ['title', 'description', 'due_at', 'is_active', 'priority', 'completed']
-    success_url = '/reminders/'
+    template_name = "reminder_edit.html"
+    fields = ['title', 'description', 'due_date','due_time', 'is_active', 'priority', 'completed']
+    success_url = reverse_lazy('reminder_list')
   
 class ReminderDeleteView(DeleteView):
     model = Reminder
-    template_name = "reminder_confirm_delete.html"
-    success_url = '/reminders/'
+    template_name = "reminder_delete.html"
+    success_url = reverse_lazy('reminder_list')
 

@@ -1,6 +1,6 @@
 
 {% block content %}
-<h1>Reminder: {{ object.title }}</h1>
+<h1>Task: {{ object.title }}</h1>
     <b>Title:</b> {{ object.title }} <br>
     <b>Description:</b> {{ object.description }} <br>
     <b>Created at:</b> {{ object.created_at }} <br>
@@ -11,6 +11,8 @@
     <b>Priority:</b> {{ object.priority }} <br>
     <b>Completed:</b> {{ object.completed }} <br>
 
+<p></p><a href="{% url 'reminder_edit' object.pk %}"><button>Edit Reminder</button></a>
+<p></p><a href="{% url 'reminder_delete' object.pk %}"><button>Delete Reminder</button></a>
 
 <p></p><a href="{% url 'reminder_list' %}"><button>Back to Reminder List</button></a>
 {% endblock %}

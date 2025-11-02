@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for reminder in object_list %}
+    <a href="{% url 'reminder_detail' reminder.pk %}"><h2>{{ reminder.title }}</h2></a>
+    due date: {{ reminder.due_date }} <br>
+    Due time: {{ reminder.due_time }}
+{% empty %}
+    <p>No reminders available.</p>
+{% endfor %}
+<p></p>
+<a href="{% url 'reminder_create' %}"><button>Create a new reminder</button></a>
+{% endblock %}

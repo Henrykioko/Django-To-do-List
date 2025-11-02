@@ -1,0 +1,16 @@
+
+{% block content %}
+<h1>Reminder: {{ object.title }}</h1>
+    <b>Title:</b> {{ object.title }} <br>
+    <b>Description:</b> {{ object.description }} <br>
+    <b>Created at:</b> {{ object.created_at }} <br>
+    <b>Due on:</b> {{ object.due_date }} <br>
+    <b>Due at:</b> {{ object.due_time }} <br>
+    <b>Is it active:</b> {{ object.is_active }} <br>
+
+    <b>Priority:</b> {{ object.priority }} <br>
+    <b>Completed:</b> {{ object.completed }} <br>
+
+
+<p></p><a href="{% url 'reminder_list' %}"><button>Back to Reminder List</button></a>
+{% endblock %}
